@@ -639,7 +639,7 @@ function Footer() {
     const currentYear = new Date().getFullYear(); // Get current year dynamically
     return (
         // Added dark mode bg/text, padding, subtle border top
-        <footer className="bg-gray-900 dark:bg-gray-950 text-gray-400 dark:text-gray-500 text-center py-8 px-4 sm:px-6  lg:px-8 text-sm border-t border-gray-700 dark:border-gray-800">
+        <footer className="bg-gray-900 dark:bg-gray-950 text-gray-400 dark:text-gray-500 text-center lg:py-2 px-4 sm:px-6  lg:px-8 text-sm border-t border-gray-700 dark:border-gray-800">
             <div className="container mx-auto">
                 {/* Copyright notice - Enhanced */}
                  &copy; {currentYear} <span className="font-semibold text-gray-300 dark:text-gray-400">{portfolioConfig.name}</span>. All rights reserved.
