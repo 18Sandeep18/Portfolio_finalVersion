@@ -55,8 +55,8 @@ const portfolioConfig = {
         codingProfiles: [
           {
              name: "LeetCode",
-             link: "YOUR_ACTUAL_LEETCODE_PROFILE_URL", // !! IMPORTANT: Replace with your actual LeetCode URL
-             details: "450+ problems solved" // Your highlight detail
+             link: "https://leetcode.com/u/Sandeep-6-0/", // !! IMPORTANT: Replace with your actual LeetCode URL
+             details: "400+ problems solved" // Your highlight detail
      },
      // Add other profiles if you have them (e.g., Codeforces, platforms for specific languages etc.)
      ],
