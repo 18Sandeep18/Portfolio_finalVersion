@@ -47,9 +47,9 @@ const portfolioConfig = {
         ],
         certifications: [
             // Example with a real link
-            { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services (AWS)", link: "https://www.credly.com/badges/..." },
-            { name: "SmartBridge -AIML powered by Google", issuer: "Google", link: null }, // Use null if no link
-            { name: "Certification Name 2", issuer: "Issuing Body", link: null }, // Use null if no link
+            { name: "AWS Certified Solution Architect", issuer: "Amazon Web Services (AWS)", link: "https://drive.google.com/file/d/1f7N6zsiKNU2W7BsAx0j3K2MHBDLp0pTL/view?usp=sharing" },
+            { name: "SmartBridge -AIML powered by Google", issuer: "Google", link: "https://drive.google.com/file/d/1aISytFJpM2m4fWJlE1Wa42kK4-EXdyBF/view?usp=sharing" }, // Use null if no link
+            { name: "IntrainTech", issuer: "SkillCepha,", link: 'https://drive.google.com/file/d/1tsapIgLgS5lFE3xd_S46Un93jtSfXPK2/view?usp=sharing' }, // Use null if no link
             // Add more certifications
         ],
         codingProfiles: [
@@ -67,13 +67,16 @@ const portfolioConfig = {
             title: "Fetal Health Detection Using AI",
             description: 'Fetal health detection project using machine learning models trained on cardiotocography (CTG) data. It features a real-time web interface integrated with backend ML models for accurate health predictions.',
             tech: ['Python', 'Random Forest', 'Flask', 'Render'],
-            link: "https://fetal-ai.onrender.com/", // Replace # with the actual link to live demo or GitHub repo, or set to null
+            link: "https://fetal-ai.onrender.com/",
+            github: "https://github.com/18Sandeep18/Fetal-AI.git", // Replace # with the actual link to live demo or GitHub repo, or set to null
             image: img6 // Using a more vibrant placeholder color
+            
         },
         {
             title: "Pneumonia Detection Using CNN",
             description: "Pneumonia detection using Convolutional Neural Networks (CNN) involves training a deep learning model to accurately identify pneumonia from chest X-ray images. This project utilizes image preprocessing and data augmentation techniques to enhance the training process.",
             tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib","DeepLearning","keras"],
+            github: "https://github.com/18Sandeep18/DL-Pneumonia-Detection-using-CNN.git", // Replace # with the actual link to live demo or GitHub repo, or set to null
             link: 'http://livedemo1.com', // Set to null if no link
             image: img1
         },
@@ -81,6 +84,7 @@ const portfolioConfig = {
             title: "Study Partner - MERN App",
             description: "Task management web application built with the MERN stack, offering user authentication, Firebase integration for real-time updates, and a responsive design using Tailwind CSS.",
             tech:  ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Tailwind CSS', 'Firebase',"Figma", "UI/UX Design"],
+            github: "https://github.com/18Sandeep18/StudyPartner-MERN01.git", // Replace # with the actual link to live demo or GitHub repo, or set to null
             link: 'https://studypartner-sandeep-mern.vercel.app/', // No link if it's just a concept/design
             image: img4
         },
@@ -88,6 +92,7 @@ const portfolioConfig = {
             title: "Roll the Dice",
             description: "A simple and interactive dice rolling game created with HTML, CSS, and JavaScript, implementing random dice logic and clean visual transitions for a fun user experience.",
             tech: ['HTML', 'CSS', 'JavaScript'],
+            github: "https://github.com/18Sandeep18/DiceRoll-New.git", // Replace # with the actual link to live demo or GitHub repo, or set to null
             link: 'https://dice-roll-new.vercel.app/', // No link if it's just a concept/design
             image:img2
         },
@@ -95,25 +100,28 @@ const portfolioConfig = {
             title: "Car Price Prediction",
             description: "Car price prediction platform leveraging machine learning regression models to estimate vehicle prices based on features like brand, year, mileage, and model type.",
             tech: ['Python', 'Machine Learning', 'Scikit-Learn', 'Flask'],
+            github: "https://github.com/18Sandeep18/car-price-prediction.git", // Replace # with the actual link to live demo or GitHub repo, or set to null
             link: 'https://car-price-prediction-2-hrm7.onrender.com/', // No link if it's just a concept/design
             image: img3
-          },
-          {
+        },
+        {
             
             title: 'E-commerce Website',
             description: 'Full-stack e-commerce platform developed using the MERN stack with secure user authentication, dynamic product listings, cart management, and integrated online payment gateway.',
             tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux', 'Stripe'],
+            github: "https://github.com/18Sandeep18/MERN-APP2.git", // Replace # with the actual link to live demo or GitHub repo, or set to null
             link: 'https://mern-app-2.vercel.app/',
             image: img4
             
             
-          },
-          {
+        },
+        {
             
             title: 'ChatBot',
             description: 'AI-powered chatbot web application using natural language processing (NLP) techniques, capable of understanding user queries and providing intelligent, context-aware responses.',
             tech: ['Python', 'NLP', 'Machine Learning', 'Flask'],
             link: 'http://livedemo3.com',
+            github: "https://github.com/myusername/myprojectrepo", // Replace # with the actual link to live demo or GitHub repo, or set to null
             image: img5
             
             
@@ -368,11 +376,11 @@ function AboutSection() {
                        <ul className="space-y-4"> {/* Increased space */}
                            {portfolioConfig.about.certifications.map((cert, index) => (
                                <li key={index} className="text-gray-600 dark:text-gray-300 text-base flex items-center"> {/* Added text-base, flex items-center */}
-                                   <span className="font-medium text-gray-800 dark:text-gray-100 mr-2">{cert.name}</span> - {cert.issuer} {/* Stronger name text */}
+                                   <span className="font-medium text-gray-800 dark:text-gray-100 mr-2">{cert.name}</span> {/* Stronger name text */}
                                    {/* Display link if it exists and is not just '#' */}
                                    {cert.link && cert.link !== "#" && (
                                        <a href={cert.link} target="_blank" rel="noopener noreferrer"
-                                          className="ml-3 text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 text-sm inline-flex items-center underline hover:no-underline transition duration-300"> {/* Styled link */}
+                                          className="ml-3 text-black dark:text-green-300 hover:text-indigo-800 dark:hover:text-indigo-300 text-sm inline-flex items-center underline hover:no-underline transition duration-300"> {/* Styled link */}
                                            [View <ExternalLink className="h-3 w-3 ml-1" aria-label="External Link"/>]
                                        </a>
                                    )}
@@ -403,7 +411,7 @@ function AboutSection() {
                                     {/* Display link if it exists and is not just '#' */}
                                     {profile.link && profile.link !== "#" && (
                                         <a href={profile.link} target="_blank" rel="noopener noreferrer"
-                                           className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 text-sm inline-flex items-center underline hover:no-underline transition duration-300 mt-1 md:mt-0"> {/* Added margin top for wrap */}
+                                           className="text-indigo-600 dark:text-green-300 hover:text-indigo-800 dark:hover:text-indigo-300 text-sm inline-flex items-center underline hover:no-underline transition duration-300 mt-1 md:mt-0"> {/* Added margin top for wrap */}
                                             [Visit Profile <ExternalLink className="h-3 w-3 ml-1" aria-label="External Link"/>]
                                         </a>
                                     )}
@@ -433,7 +441,7 @@ function ProjectCard({ project }) {
                     // Basic image error fallback
                     onError={(e) => {
                         e.target.onerror = null; // Prevent infinite loops
-                        e.target.src='https://placehold.co/600x400/cccccc/333333?text=Image+Error'; // Fallback image
+                        e.target.src = 'https://placehold.co/600x400/cccccc/333333?text=Image+Error'; // Fallback image
                         e.target.alt = `Error loading image for ${project.title}`; // Update alt text on error
                     }}
                 />
@@ -453,29 +461,45 @@ function ProjectCard({ project }) {
                         ))}
                     </div>
                 </div>
-                {/* Project Link (conditionally rendered) - Enhanced */}
-                {project.link && project.link !== "#" ? (
-                    <a
-                        href={project.link}
-                        target="_blank" // Open in new tab
-                        rel="noopener noreferrer" // Security best practice
-                        className="mt-auto inline-block text-center bg-indigo-600 text-white text-sm font-semibold px-6 py-3 rounded-lg
-                                   hover:bg-indigo-700 transition duration-300 transform hover:scale-105
-                                   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" // Styled button, added transform, focus
-                    >
-                        View Project <ExternalLink className="inline-block ml-2 h-4 w-4" aria-label="External Link"/> {/* Increased ml */}
-                    </a>
-                ) : (
-                    // Show if no link is available - Enhanced
-                    <span className="mt-auto text-center text-gray-400 dark:text-gray-500 text-sm italic px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg"> {/* Added border, increased padding, added dark mode text/border */}
-                        (Link not available)
-                    </span>
-                )}
+                {/* Project Links (View & GitHub) - Enhanced */}
+                <div className="mt-auto flex justify-center space-x-4"> {/* Centered, spaced links */}
+                    {project.link && project.link !== "#" && (
+                        <a
+                            href={project.link}
+                            target="_blank" // Open in new tab
+                            rel="noopener noreferrer" // Security best practice
+                            className="inline-block text-center bg-indigo-600 text-white text-sm font-semibold px-6 py-3 rounded-lg
+                                       hover:bg-indigo-700 transition duration-300 transform hover:scale-105
+                                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" // Styled button, added transform, focus
+                        >
+                            View Project
+                            <ExternalLink className="inline-block ml-2 h-4 w-4" aria-label="External Link" /> {/* Increased ml */}
+                        </a>
+                    )}
+                    {project.github && project.github !== "#" && (
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block text-center bg-gray-700 dark:bg-gray-800 text-white text-sm font-semibold px-6 py-3 rounded-lg
+                                       hover:bg-gray-800 dark:hover:bg-gray-900 transition duration-300 transform hover:scale-105
+                                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                        >
+                            GitHub
+                            <Github className="inline-block ml-2 h-4 w-4" aria-label="GitHub Link" />
+                        </a>
+                    )}
+                    {(!project.link || project.link === "#") && (!project.github || project.github === "#") && (
+                        // Show if neither link is available - Enhanced
+                        <span className="text-center text-gray-400 dark:text-gray-500 text-sm italic px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg">
+                            (Links not available)
+                        </span>
+                    )}
+                </div>
             </div>
         </div>
     );
 }
-
 
 // Projects Section Component - Enhanced Styling
 function ProjectsSection() {
@@ -615,7 +639,7 @@ function Footer() {
     const currentYear = new Date().getFullYear(); // Get current year dynamically
     return (
         // Added dark mode bg/text, padding, subtle border top
-        <footer className="bg-gray-900 dark:bg-gray-950 text-gray-400 dark:text-gray-500 text-center py-8 px-4 sm:px-6 lg:px-8 text-sm border-t border-gray-700 dark:border-gray-800">
+        <footer className="bg-gray-900 dark:bg-gray-950 text-gray-400 dark:text-gray-500 text-center py-8 px-4 sm:px-6  lg:px-8 text-sm border-t border-gray-700 dark:border-gray-800">
             <div className="container mx-auto">
                 {/* Copyright notice - Enhanced */}
                  &copy; {currentYear} <span className="font-semibold text-gray-300 dark:text-gray-400">{portfolioConfig.name}</span>. All rights reserved.
@@ -714,7 +738,8 @@ function App() {
     return (
         // Base container for the entire application
         // Added dark mode background, scroll-smooth
-        <div className="font-sans antialiased text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 min-h-screen scroll-smooth">
+        <div className="font-sans antialiased text-gray-900 dark:text-gray-100 bg-gradient-to-br from-blue-100 via-cyan-100 to-teal-100
+                                       dark:from-gray-900 dark:via-gray-800 dark:to-gray-950 min-h-screen scroll-smooth">
             {/* Render the Navbar, passing the current view state and the function to update it */}
             <Navbar currentView={currentView} setView={setCurrentView} />
 
