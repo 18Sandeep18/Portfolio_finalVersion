@@ -154,13 +154,13 @@ function Navbar({ currentView, setView }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Placeholder state
 
     return (
-        <nav className="bg-gray-800 dark:bg-gray-900 text-white sticky top-0 z-50 shadow-xl transition-colors duration-300"> {/* Added dark mode bg, increased shadow, transition */}
+        <nav className="bg-gray-800 dark:bg-gray-800 text-white sticky top-0 z-50 shadow-xl transition-colors duration-300"> {/* Added dark mode bg, increased shadow, transition */}
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo/Name */}
                     <div className="flex-shrink-0">
                         <span
-                            className="font-bold text-xl text-indigo-300 dark:text-indigo-400 cursor-pointer hover:text-white transition duration-300" // Added hover effect, color
+                            className="font-bold text-xl text-indigo-300 dark:text-white cursor-pointer hover:text-white transition duration-300" // Added hover effect, color
                             onClick={() => setView('home')}
                         >
                             {portfolioConfig.name}
@@ -232,9 +232,9 @@ function HomeSection() {
         // Using min-h-[calc(100vh-4rem)] ensures the section tries to fill the viewport height minus the navbar height
         // Added subtle pattern, darker shades for dark mode
         <section id="home" className="min-h-[calc(100vh-4rem)] flex items-center justify-center
-                                       bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600
+                                       bg-gradient-to-br from-blue-100 via-cyan-100 to-teal-100
                                        dark:from-gray-900 dark:via-gray-800 dark:to-gray-950
-                                       text-white text-center p-8 pt-16 md:pt-8
+                                       text-black dark:text-white text-center p-8 pt-16 md:pt-8
                                        relative overflow-hidden"> {/* Added relative, overflow-hidden */}
             {/* Optional: Add a subtle background pattern/overlay */}
             <div className="absolute inset-0 bg-pattern opacity-10 dark:opacity-5"></div> {/* Placeholder for a pattern class */}
@@ -281,19 +281,19 @@ function HomeSection() {
                  <div className="mt-8 flex justify-center space-x-6">
                      {portfolioConfig.contact.linkedin && (
                         <a href={portfolioConfig.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                           className="text-white hover:text-indigo-200 transition duration-300 transform hover:scale-110">
+                           className="text-black dark:text-white hover:text-indigo-200 transition duration-300 transform hover:scale-110">
                            <Linkedin size={30} />
                         </a>
                      )}
                       {portfolioConfig.contact.github && (
                          <a href={portfolioConfig.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                            className="text-white hover:text-indigo-200 transition duration-300 transform hover:scale-110">
+                            className="text-black dark:text-white hover:text-indigo-200 transition duration-300 transform hover:scale-110">
                             <Github size={30} />
                          </a>
                       )}
                        {portfolioConfig.contact.email && (
                           <a href={`mailto:${portfolioConfig.contact.email}`} aria-label="Email"
-                             className="text-white hover:text-indigo-200 transition duration-300 transform hover:scale-110">
+                             className="text-black dark:text-white hover:text-indigo-200 transition duration-300 transform hover:scale-110">
                              <Mail size={30} />
                           </a>
                        )}
@@ -307,13 +307,14 @@ function HomeSection() {
 // About Section Component - Enhanced Styling
 function AboutSection() {
     return (
-        <section id="about" className="py-16 md:py-24 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 sm:px-6 lg:px-8 scroll-mt-16 transition-colors duration-300"> {/* scroll-mt accounts for sticky nav, added dark mode bg/text */}
+        <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-blue-100 via-cyan-100 to-teal-100
+                                       dark:from-gray-900 dark:via-gray-800 dark:to-gray-950 dark:via bg-gray-1000 dark:to bg-gray- text-gray-800 dark:text-gray-200 px-4 sm:px-6 lg:px-8 scroll-mt-16 transition-colors duration-300"> {/* scroll-mt accounts for sticky nav, added dark mode bg/text */}
             <div className="container mx-auto max-w-6xl"> {/* Increased max-w */}
                 <SectionTitle title="About Me" icon={User} />
 
                 {/* Full Summary Card - Enhanced */}
                 <div className="mb-12 p-8 bg-white dark:bg-gray-700 rounded-lg shadow-xl transform transition duration-300 hover:translate-y-1"> {/* Increased padding, shadow, added transform on hover */}
-                   <h3 className="text-2xl font-bold text-gray-700 dark:text-gray-100 mb-6 border-b border-indigo-200 dark:border-indigo-700 pb-3">Summary</h3> {/* Stronger heading, border */}
+                   <h3 className="text-2xl font-bold text-gray-700 dark:text-gray-100 mb-6 border-b border-indigo-200  pb-3">Summary</h3> {/* Stronger heading, border */}
                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line text-lg">{portfolioConfig.about.summary}</p> {/* Increased text size, added dark mode text color */}
                 </div>
 
@@ -322,7 +323,7 @@ function AboutSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10"> {/* Changed to 2 columns on medium screens */}
                     {/* Skills Card - Enhanced */}
                     <div className="p-8 bg-white dark:bg-gray-700 rounded-lg shadow-xl transform transition duration-300 hover:translate-y-1"> {/* Increased padding, shadow, added transform on hover */}
-                        <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200 dark:border-indigo-700 pb-3"> {/* Stronger heading, border */}
+                        <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200  pb-3"> {/* Stronger heading, border */}
                              <Award className="mr-3 h-6 w-6 text-indigo-600 dark:text-indigo-400" aria-hidden="true"/> Skills {/* Increased icon size/margin, added dark mode icon color */}
                         </h3>
                         {/* Render skills as tags - Enhanced */}
@@ -337,7 +338,7 @@ function AboutSection() {
 
                     {/* Education Card - Enhanced */}
                     <div className="p-8 bg-white dark:bg-gray-700 rounded-lg shadow-xl transform transition duration-300 hover:translate-y-1"> {/* Increased padding, shadow, added transform on hover */}
-                        <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200 dark:border-indigo-700 pb-3"> {/* Stronger heading, border */}
+                        <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200  pb-3"> {/* Stronger heading, border */}
                             <GraduationCap className="mr-3 h-6 w-6 text-indigo-600 dark:text-indigo-400" aria-hidden="true"/> Education {/* Increased icon size/margin, added dark mode icon color */}
                         </h3>
                         {/* List education items - Enhanced */}
@@ -361,7 +362,7 @@ function AboutSection() {
                 {/* Certifications Card (only shown if certifications exist) - Enhanced */}
                 {portfolioConfig.about.certifications && portfolioConfig.about.certifications.length > 0 && (
                    <div className="mt-12 p-8 bg-white dark:bg-gray-700 rounded-lg shadow-xl transform transition duration-300 hover:translate-y-1"> {/* Increased margin-top, padding, shadow, transform */}
-                        <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200 dark:border-indigo-700 pb-3"> {/* Stronger heading, border */}
+                        <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200  pb-3"> {/* Stronger heading, border */}
                            <Award className="mr-3 h-6 w-6 text-indigo-600 dark:text-indigo-400" aria-hidden="true"/> Certifications {/* Increased icon size/margin, added dark mode icon color */}
                        </h3>
                        <ul className="space-y-4"> {/* Increased space */}
@@ -382,7 +383,7 @@ function AboutSection() {
                 )}
                 {portfolioConfig.about.codingProfiles && portfolioConfig.about.codingProfiles.length > 0 && (
                     <div className="mt-12 p-8 bg-white dark:bg-gray-700 rounded-lg shadow-xl transform transition duration-300 hover:translate-y-1">
-                         <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200 dark:border-indigo-700 pb-3">
+                         <h3 className="text-xl font-bold text-gray-700 dark:text-gray-100 mb-6 flex items-center border-b border-indigo-200  pb-3">
                             {/* Using CodeBracketIcon - replace if using a different icon library */}
                             <CodeBracketIcon className="mr-3 h-6 w-6 text-indigo-600 dark:text-indigo-400" aria-hidden="true"/> Coding Profiles
                          </h3>
@@ -479,7 +480,8 @@ function ProjectCard({ project }) {
 // Projects Section Component - Enhanced Styling
 function ProjectsSection() {
     return (
-        <section id="projects" className="py-16 md:py-24 bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 sm:px-6 lg:px-8 scroll-mt-16 transition-colors duration-300"> {/* scroll-mt accounts for sticky nav, added dark mode bg/text */}
+        <section id="projects" className="py-16 md:py-24 bg-gradient-to-br from-blue-100 via-cyan-100 to-teal-100
+                                       dark:from-gray-900 dark:via-gray-800 dark:to-gray-950 text-gray-900 dark:text-white px-4 sm:px-6 lg:px-8 scroll-mt-16 transition-colors duration-300"> {/* scroll-mt accounts for sticky nav, added dark mode bg/text */}
             <div className="container mx-auto max-w-7xl"> {/* Increased max-w */}
                 <SectionTitle title="Projects" icon={Briefcase} />
                 {/* Responsive Grid for Project Cards - Enhanced gap */}
@@ -502,80 +504,111 @@ function ProjectsSection() {
 function ContactSection() {
     // Helper function to format phone number for tel: link
     const formatPhoneNumber = (phone) => phone ? phone.replace(/\s+/g, '') : '';
-
+  
     return (
-        <section id="contact" className="py-16 md:py-24 bg-gray-800 dark:bg-gray-900 text-gray-200 dark:text-gray-300 px-4 sm:px-6 lg:px-8 scroll-mt-16 transition-colors duration-300"> {/* scroll-mt accounts for sticky nav, added dark mode bg/text */}
-            <div className="container mx-auto max-w-5xl text-center"> {/* Increased max-w */}
-                <SectionTitle title="Get In Touch" icon={Mail} />
-                {/* Introductory text - Enhanced */}
-                <p className="text-lg text-gray-400 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"> {/* Increased margin-bottom, max-width, leading */}
-                   I'm currently seeking opportunities for Software Engineer roles (Internship/Full-time). Feel free to reach out if you have any questions, opportunities, or just want to connect!
-                   {/* Customize this message */}
-                </p>
-                {/* Contact Links - Enhanced */}
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 md:gap-y-8 max-w-2xl mx-auto"> {/* Used grid for better layout */}
-                    {/* Email */}
-                    <div className="flex items-center justify-center md:justify-start"> {/* Added md justify-start */}
-                         <Mail className="h-7 w-7 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true"/> {/* Increased icon size/margin, flex-shrink */}
-                         <a href={`mailto:${portfolioConfig.contact.email}`}
-                            className="hover:text-white dark:hover:text-white transition duration-300 text-lg break-all">{portfolioConfig.contact.email}</a> {/* Increased text size, break-all */}
-                    </div>
-                      {/* Phone (conditional) */}
-                      {portfolioConfig.contact.phone && (
-                         <div className="flex items-center justify-center md:justify-start">
-                             <Phone className="h-7 w-7 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true"/>
-                             <a href={`tel:${formatPhoneNumber(portfolioConfig.contact.phone)}`}
-                                className="hover:text-white dark:hover:text-white transition duration-300 text-lg">{portfolioConfig.contact.phone}</a> {/* Increased text size */}
-                         </div>
-                      )}
-                       {/* LinkedIn (conditional) */}
-                       {portfolioConfig.contact.linkedin && (
-                          <div className="flex items-center justify-center md:justify-start">
-                              <Linkedin className="h-7 w-7 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true"/>
-                              <a href={portfolioConfig.contact.linkedin} target="_blank" rel="noopener noreferrer"
-                                 className="hover:text-white dark:hover:text-white transition duration-300 text-lg underline hover:no-underline">LinkedIn Profile</a> {/* Increased text size, added underline */}
-                          </div>
-                       )}
-                        {/* GitHub (conditional) */}
-                        {portfolioConfig.contact.github && (
-                           <div className="flex items-center justify-center md:justify-start">
-                               <Github className="h-7 w-7 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true"/>
-                               <a href={portfolioConfig.contact.github} target="_blank" rel="noopener noreferrer"
-                                  className="hover:text-white dark:hover:text-white transition duration-300 text-lg underline hover:no-underline">GitHub Profile</a> {/* Increased text size, added underline */}
-                           </div>
-                        )}
-                         {/* Location (conditional) - Added MapPin icon */}
-                          {portfolioConfig.contact.location && (
-                              <div className="md:col-span-2 flex items-center justify-center"> {/* Centered under the 2-column grid */}
-                                  <MapPin className="h-7 w-7 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true"/>
-                                  <span className="text-lg text-gray-300 dark:text-gray-400">{portfolioConfig.contact.location}</span> {/* Increased text size */}
-                              </div>
-                          )}
-                 </div>
-                {/* Optional Contact Form Placeholder */}
-                {/* <div className="mt-12 p-8 bg-gray-700 rounded-lg shadow-lg max-w-lg mx-auto">
-                     <h3 className="text-xl font-bold text-white mb-6">Send a Message</h3>
-                      {/* Basic form structure - replace with actual form implementation (e.g., Formspree, Netlify Forms, etc.) }
-                     <form className="space-y-4">
-                         <div>
-                             <label htmlFor="name" className="sr-only">Name</label>
-                             <input type="text" id="name" name="name" placeholder="Your Name" className="w-full px-4 py-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-                         </div>
-                         <div>
-                             <label htmlFor="email" className="sr-only">Email</label>
-                             <input type="email" id="email" name="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-                         </div>
-                         <div>
-                             <label htmlFor="message" className="sr-only">Message</label>
-                             <textarea id="message" name="message" rows="4" placeholder="Your Message" className="w-full px-4 py-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-                         </div>
-                         <button type="submit" className="w-full px-6 py-3 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition duration-300">Send Message</button>
-                     </form>
-                </div> */}
+      <section
+        id="contact"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-cyan-100 to-teal-100
+                                       dark:from-gray-900 dark:via-gray-800 dark:to-gray-950 text-black dark:text-white px-4 sm:px-6 lg:px-8 scroll-mt-16 transition-colors duration-300"
+      >
+        <div className="container mx-auto max-w-5xl text-center">
+          <SectionTitle title="Get In Touch" icon={Mail} />
+          {/* Introductory text */}
+          <p className="text-lg text-black dark:text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+            I'm currently seeking opportunities for Software Engineer roles (Internship/Full-time). Feel free to reach out if you have any questions, opportunities, or just want to connect!
+            {/* Customize this message */}
+          </p>
+  
+          {/* Glassmorphic Card */}
+          <div className="bg-white/10 dark:bg-gray-700/50 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-8 md:p-10 max-w-md mx-auto">
+            <div className="grid grid-cols-1 gap-6">
+              {/* Email */}
+              <div className="flex items-center">
+                <Mail className="h-6 w-6 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true" />
+                <a
+                  href={`mailto:${portfolioConfig.contact.email}`}
+                  className="hover:text-white dark:hover:text-white transition duration-300 text-lg break-all"
+                >
+                  {portfolioConfig.contact.email}
+                </a>
+              </div>
+  
+              {/* Phone (conditional) */}
+              {portfolioConfig.contact.phone && (
+                <div className="flex items-center">
+                  <Phone className="h-6 w-6 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true" />
+                  <a
+                    href={`tel:${formatPhoneNumber(portfolioConfig.contact.phone)}`}
+                    className="hover:text-white dark:hover:text-white transition duration-300 text-lg"
+                  >
+                    {portfolioConfig.contact.phone}
+                  </a>
+                </div>
+              )}
+  
+              {/* LinkedIn (conditional) */}
+              {portfolioConfig.contact.linkedin && (
+                <div className="flex items-center">
+                  <Linkedin className="h-6 w-6 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true" />
+                  <a
+                    href={portfolioConfig.contact.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white dark:hover:text-white transition duration-300 text-lg underline hover:no-underline"
+                  >
+                    LinkedIn Profile
+                  </a>
+                </div>
+              )}
+  
+              {/* GitHub (conditional) */}
+              {portfolioConfig.contact.github && (
+                <div className="flex items-center">
+                  <Github className="h-6 w-6 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true" />
+                  <a
+                    href={portfolioConfig.contact.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white dark:hover:text-white transition duration-300 text-lg underline hover:no-underline"
+                  >
+                    GitHub Profile
+                  </a>
+                </div>
+              )}
+  
+              {/* Location (conditional) */}
+              {portfolioConfig.contact.location && (
+                <div className="flex items-center">
+                  <MapPin className="h-6 w-6 mr-4 text-indigo-400 dark:text-indigo-300 flex-shrink-0" aria-hidden="true" />
+                  <span className="text-lg text-black dark:text-white">{portfolioConfig.contact.location}</span>
+                </div>
+              )}
             </div>
-        </section>
+          </div>
+  
+          {/* Optional Contact Form Placeholder (moved outside the glassmorphic card for better separation) */}
+          {/* <div className="mt-12 p-8 bg-gray-700 rounded-lg shadow-lg max-w-lg mx-auto">
+            <h3 className="text-xl font-bold text-white mb-6">Send a Message</h3>
+            <form className="space-y-4">
+              <div>
+                <label htmlFor="name" className="sr-only">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" className="w-full px-4 py-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              </div>
+              <div>
+                <label htmlFor="email" className="sr-only">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              </div>
+              <div>
+                <label htmlFor="message" className="sr-only">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" className="w-full px-4 py-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+              </div>
+              <button type="submit" className="w-full px-6 py-3 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition duration-300">Send Message</button>
+            </form>
+          </div> */}
+        </div>
+      </section>
     );
-}
+  }
 
 // Footer Component - Enhanced Styling
 function Footer() {
