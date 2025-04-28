@@ -17,7 +17,7 @@ export const portfolioConfig = {
     location: "Bhimavaram, Andhra Pradesh, India"
   },
   about: {
-    summary: "Highly motivated and enthusiastic B.Tech final year student specializing in Computer Science...",
+    summary: "Highly motivated and enthusiastic B.Tech final year student specializing in Computer Science. Eager to leverage academic knowledge and practical skills in a challenging software development role. Passionate about creating efficient, scalable, and user-friendly applications. Seeking opportunities to contribute to innovative projects and grow professionally.",
     skills: [
       "JavaScript (React, Node.js)", "Python (Django/Flask)", "Java","Machine Learning","Deep Learning", "C++",
       "HTML5", "CSS3", "Tailwind CSS", "SQL", "NoSQL (MongoDB)",
